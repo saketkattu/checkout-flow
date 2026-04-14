@@ -118,3 +118,11 @@
   width: 16px;
   height: 16px;
 }
+
+@media (max-width: 600px) {
+  .root { gap: var(--space-6); }
+  .personSection { gap: var(--space-3); }
+  .relationshipOptions { flex-direction: column; gap: var(--space-2); }
+  .repForm { padding: var(--space-4); }
+  .personSectionHeader { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
+}

@@ -66,9 +66,17 @@ export function PersonCard({ person, canRemove, onUpdate, onRemove, onToggleExpa
           <div className={[styles.name, !person.name ? styles.namePlaceholder : ''].filter(Boolean).join(' ')}>
             {person.name || 'New person'}
           </div>
-          {person.designation && <div className={styles.meta}>{person.designation}</div>}
+          {person.designation && (
+            <div className={styles.meta}>
+              {person.designation}
+              {person.din && <span style={{ marginLeft: 6, opacity: 0.7 }}>· DIN {person.din}</span>}
+            </div>
+          )}
           {person.ownershipPercent !== undefined && (
-            <div className={styles.meta}>{person.ownershipPercent.toFixed(2)}% ownership</div>
+            <div className={styles.meta}>
+              {person.ownershipPercent.toFixed(2)}% ownership
+              {person.nationality && <span style={{ marginLeft: 6, opacity: 0.7 }}>· {person.nationality}</span>}
+            </div>
           )}
         </div>
         <div className={styles.headerRight}>

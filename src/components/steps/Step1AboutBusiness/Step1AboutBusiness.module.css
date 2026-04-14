@@ -115,3 +115,12 @@
   width: 14px;
   height: 14px;
 }
+
+@media (max-width: 600px) {
+  .root { gap: var(--space-6); }
+  .section { gap: var(--space-4); }
+  .currencyGrid { gap: var(--space-2); }
+  .currencyChip { font-size: var(--font-size-label); padding: 5px 10px; }
+  .socialRow { flex-direction: column; }
+  .socialRow > :first-child { width: 100%; }
+}

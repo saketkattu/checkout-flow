@@ -81,7 +81,9 @@
   background-color: var(--color-ghost-white);
 }
 
-@media (max-width: 480px) {
-  .body { grid-template-columns: 1fr; }
+@media (max-width: 600px) {
+  .body { grid-template-columns: 1fr; padding: var(--space-3); gap: var(--space-3); }
   .fieldFull { grid-column: 1; }
+  .header { padding: var(--space-2) var(--space-3); }
+  .headerLeft { gap: var(--space-1); flex-wrap: wrap; }
 }

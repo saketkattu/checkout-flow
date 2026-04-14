@@ -117,6 +117,11 @@
   gap: var(--space-4);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .twoCol { grid-template-columns: 1fr; }
+  .idTypeOptions { flex-direction: column; }
+  .idTypeCard { min-width: unset; }
+  .modeToggle { width: 100%; }
+  .toggleBtn { flex: 1; text-align: center; }
+  .root { gap: var(--space-6); }
 }

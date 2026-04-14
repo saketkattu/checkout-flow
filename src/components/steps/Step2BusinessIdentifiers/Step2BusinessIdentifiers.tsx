@@ -357,22 +357,38 @@ export function Step2BusinessIdentifiers() {
           />
         )}
 
-        {/* MCA Directors pre-fetch notice */}
-        {directorState.status === 'success' && directorState.data && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--font-size-small)', color: '#1A5C2A', padding: '8px 12px', background: 'var(--color-muted-sage)', borderRadius: 'var(--radius-sm)' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            {directorState.data.length} director(s) fetched from MCA — pre-filled in Personnel step
+        {/* MCA pre-fetch consolidated notice */}
+        {(directorState.status === 'success' || uboState.status === 'success') && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)', padding: '12px 14px', background: 'var(--color-muted-sage)', borderRadius: 'var(--radius-sm)', borderLeft: '3px solid #1A5C2A' }}>
+            <div style={{ fontSize: 'var(--font-size-small)', fontWeight: 'var(--font-weight-medium)', color: '#1A5C2A' }}>
+              Personnel pre-filled from Ministry of Corporate Affairs
+            </div>
+            {directorState.status === 'success' && directorState.data && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--font-size-small)', color: 'var(--color-navy-core)' }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1A5C2A" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                {directorState.data.length} director{directorState.data.length !== 1 ? 's' : ''} — review in Personnel step
+              </div>
+            )}
+            {uboState.status === 'success' && uboState.data && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--font-size-small)', color: 'var(--color-navy-core)' }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1A5C2A" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+                {uboState.data.length} beneficial owner{uboState.data.length !== 1 ? 's' : ''} — review in Personnel step
+              </div>
+            )}
           </div>
         )}
 
-        {uboState.status === 'success' && uboState.data && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--font-size-small)', color: '#1A5C2A', padding: '8px 12px', background: 'var(--color-muted-sage)', borderRadius: 'var(--radius-sm)' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        {/* Loading notice when MCA fetch is in progress */}
+        {(directorState.status === 'loading' || uboState.status === 'loading') && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', fontSize: 'var(--font-size-small)', color: 'var(--color-slate-blue)', padding: '8px 12px', background: 'var(--color-ghost-white)', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-ice-lavender)' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ animation: 'spin 1s linear infinite' }}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
             </svg>
-            {uboState.data.length} beneficial owner(s) fetched from MCA — pre-filled in Personnel step
+            Fetching directors and UBOs from MCA…
           </div>
         )}
       </div>

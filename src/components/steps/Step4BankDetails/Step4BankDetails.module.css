@@ -30,6 +30,7 @@
   gap: var(--space-4);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .twoCol { grid-template-columns: 1fr; }
+  .root { gap: var(--space-6); }
 }

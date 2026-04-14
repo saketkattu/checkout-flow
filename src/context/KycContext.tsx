@@ -346,7 +346,12 @@ function reducer(state: KycState, action: KycAction): KycState {
     case 'FILL_FROM_GST': {
       const { gstInfo } = action;
       const newPaths = new Set(prefillPaths);
-      newPaths.add('step2.businessId.value');
+      // Only set GSTIN as the businessId if no type has been chosen yet.
+      // If CIN was already set (e.g. via FILL_FROM_PAN), preserve it — the
+      // GSTN API result is still shown in the ApiResultCard for reference.
+      const currentType = formState.step2.businessId.type;
+      const shouldFillBusinessId = !currentType || currentType === 'GSTIN';
+      if (shouldFillBusinessId) newPaths.add('step2.businessId.value');
       return {
         ...state,
         prefillPaths: newPaths,
@@ -354,7 +359,9 @@ function reducer(state: KycState, action: KycAction): KycState {
           ...formState,
           step2: {
             ...formState.step2,
-            businessId: { ...formState.step2.businessId, type: 'GSTIN', value: gstInfo.gstin },
+            businessId: shouldFillBusinessId
+              ? { ...formState.step2.businessId, type: 'GSTIN', value: gstInfo.gstin }
+              : formState.step2.businessId,
           },
         },
       };
