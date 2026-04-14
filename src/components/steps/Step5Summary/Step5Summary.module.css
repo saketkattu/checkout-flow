@@ -1,0 +1,165 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-light);
+  color: var(--color-navy-core);
+}
+
+.subtitle {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-light);
+  color: var(--color-slate-blue);
+}
+
+.section {
+  border: 1px solid var(--color-ice-lavender);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-ghost-white);
+  border-bottom: 1px solid var(--color-ice-lavender);
+}
+
+.sectionHeaderTitle {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-navy-core);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rows {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rowLabel {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-steel-lavender);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rowValue {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-navy-core);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.rowEmpty {
+  color: var(--color-steel-lavender);
+  font-style: italic;
+}
+
+.personList {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.personRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-ice-lavender);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-near-white);
+}
+
+.personAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-soft-lavender);
+  color: var(--color-deep-indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-medium);
+  flex-shrink: 0;
+}
+
+.personInfo { flex: 1; }
+.personName { font-size: var(--font-size-small); font-weight: var(--font-weight-regular); color: var(--color-navy-core); }
+.personMeta { font-size: var(--font-size-label); color: var(--color-steel-lavender); }
+
+.declaration {
+  padding: var(--space-5);
+  background-color: var(--color-ghost-white);
+  border: 1px solid var(--color-ice-lavender);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.declarationTitle {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-navy-core);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.declarationText {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-slate-blue);
+  line-height: 20px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-deep-indigo);
+  flex-shrink: 0;
+  margin-top: 1px;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-navy-core);
+  line-height: 20px;
+  cursor: pointer;
+}

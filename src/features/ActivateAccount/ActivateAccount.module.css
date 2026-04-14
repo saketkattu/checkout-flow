@@ -1,0 +1,37 @@
+.submitBtn {
+  min-width: 160px;
+}
+
+.successOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-20) var(--space-8);
+  text-align: center;
+  gap: var(--space-5);
+}
+
+.successIcon {
+  width: 56px;
+  height: 56px;
+  color: #1A5C2A;
+  background-color: var(--color-muted-sage);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.successTitle {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-light);
+  color: var(--color-navy-core);
+}
+
+.successSubtitle {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-light);
+  color: var(--color-slate-blue);
+  max-width: 340px;
+}

@@ -1,0 +1,61 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-medium);
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+/* Info — Soft Lavender / Deep Indigo */
+.info {
+  background-color: var(--color-soft-lavender);
+  color: var(--color-deep-indigo);
+}
+
+/* Success — Muted Sage / Navy Core */
+.success {
+  background-color: var(--color-muted-sage);
+  color: var(--color-navy-core);
+}
+
+/* Neutral — Periwinkle Mist / Slate Blue */
+.neutral {
+  background-color: var(--color-periwinkle-mist);
+  color: var(--color-slate-blue);
+}
+
+/* Warning */
+.warning {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+/* Error */
+.error {
+  background-color: #FEE2E2;
+  color: var(--color-error);
+}
+
+/* Source-specific — MCA */
+.mca {
+  background-color: var(--color-soft-lavender);
+  color: var(--color-deep-indigo);
+}
+
+/* Source-specific — GSTN */
+.gstn {
+  background-color: var(--color-muted-sage);
+  color: #1A5C2A;
+}
+
+/* Source-specific — ITD (Income Tax Department) */
+.itd {
+  background-color: #EFF6FF;
+  color: #1E40AF;
+}
