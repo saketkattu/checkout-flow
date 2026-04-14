@@ -1,0 +1,123 @@
+.card {
+  border: 1px solid var(--color-ice-lavender);
+  border-radius: var(--radius-md);
+  background-color: var(--color-pure-white);
+  box-shadow: var(--shadow-resting);
+  overflow: hidden;
+  transition: var(--transition-card);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  cursor: pointer;
+  user-select: none;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-soft-lavender);
+  color: var(--color-deep-indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  flex-shrink: 0;
+}
+
+.nameGroup {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-navy-core);
+  line-height: 22px;
+}
+
+.namePlaceholder {
+  color: var(--color-steel-lavender);
+}
+
+.meta {
+  font-size: var(--font-size-small);
+  color: var(--color-steel-lavender);
+  line-height: 18px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--color-steel-lavender);
+  transition: transform var(--transition-base);
+}
+.chevronOpen { transform: rotate(180deg); }
+
+.body {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-ice-lavender);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.docToggle {
+  display: flex;
+  gap: var(--space-2);
+  border: 1px solid var(--color-ice-lavender);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  background-color: var(--color-ghost-white);
+  width: fit-content;
+}
+
+.toggleBtn {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-steel-lavender);
+  padding: 4px 12px;
+  border-radius: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+.toggleBtnActive {
+  background-color: var(--color-pure-white);
+  color: var(--color-navy-core);
+  box-shadow: var(--shadow-resting);
+}
+
+.removeBtn {
+  margin-top: var(--space-2);
+}
+
+.verifyStatus {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-small);
+}
+
+@media (max-width: 600px) {
+  .header { padding: var(--space-3); gap: var(--space-2); }
+  .body { padding: var(--space-3); }
+  .headerRight { gap: var(--space-1); }
+  .name { font-size: var(--font-size-small); }
+  .docToggle { width: 100%; }
+  .toggleBtn { flex: 1; text-align: center; }
+}

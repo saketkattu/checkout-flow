@@ -1,0 +1,128 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-light);
+  color: var(--color-navy-core);
+  line-height: 32px;
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-light);
+  color: var(--color-slate-blue);
+  margin-top: calc(-1 * var(--space-3));
+}
+
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-muted-sage);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid #1A5C2A;
+}
+
+.bannerIcon {
+  width: 16px;
+  height: 16px;
+  color: #1A5C2A;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bannerText {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  color: var(--color-navy-core);
+  line-height: 20px;
+}
+
+.personSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.personSectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.personSectionTitle {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-navy-core);
+}
+
+.personSectionMeta {
+  font-size: var(--font-size-small);
+  color: var(--color-steel-lavender);
+}
+
+.personCards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.emptySlot {
+  border: 1.5px dashed var(--color-ice-lavender);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--color-steel-lavender);
+  font-size: var(--font-size-small);
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-ice-lavender);
+}
+
+/* Representative sub-form */
+.repForm {
+  border: 1px solid var(--color-ice-lavender);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  background-color: var(--color-near-white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.relationshipOptions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  color: var(--color-navy-core);
+}
+
+.radioOption input[type='radio'] {
+  accent-color: var(--color-deep-indigo);
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 600px) {
+  .root { gap: var(--space-6); }
+  .personSection { gap: var(--space-3); }
+  .relationshipOptions { flex-direction: column; gap: var(--space-2); }
+  .repForm { padding: var(--space-4); }
+  .personSectionHeader { flex-direction: column; align-items: flex-start; gap: var(--space-1); }
+}

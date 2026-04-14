@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: var(--space-4) var(--space-12);
+  border-bottom: 1px solid var(--color-ice-lavender);
+  background-color: var(--color-pure-white);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: default;
+}
+
+.stepContent.clickable {
+  cursor: pointer;
+}
+
+.nodeRow {
+  display: flex;
+  align-items: center;
+}
+
+.node {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-medium);
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+  flex-shrink: 0;
+}
+
+.nodeUpcoming {
+  background-color: var(--color-ghost-white);
+  color: var(--color-steel-lavender);
+  border: 1.5px solid var(--color-ice-lavender);
+}
+
+.nodeActive {
+  background-color: var(--color-pure-white);
+  color: var(--color-deep-indigo);
+  border: 2px solid var(--color-deep-indigo);
+  font-weight: var(--font-weight-medium);
+}
+
+.nodeCompleted {
+  background-color: var(--color-deep-indigo);
+  color: var(--color-pure-white);
+  border: none;
+}
+
+.connector {
+  width: 48px;
+  height: 1.5px;
+  background-color: var(--color-ice-lavender);
+  flex-shrink: 0;
+}
+
+.connectorCompleted {
+  background-color: var(--color-deep-indigo);
+}
+
+.stepLabel {
+  font-size: 11px;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-steel-lavender);
+  white-space: nowrap;
+}
+
+.stepLabelActive {
+  color: var(--color-deep-indigo);
+  font-weight: var(--font-weight-medium);
+}
+
+.stepLabelCompleted {
+  color: var(--color-navy-core);
+}
+
+/* Mobile: hide labels, compress */
+@media (max-width: 767px) {
+  .container {
+    padding: var(--space-3) var(--space-4);
+  }
+  .stepLabel { display: none; }
+  .connector { width: 24px; }
+  .node { width: 24px; height: 24px; font-size: 10px; }
+}
